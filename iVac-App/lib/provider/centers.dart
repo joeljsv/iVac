@@ -12,6 +12,7 @@ import 'package:vacinefinder/utils/service.dart';
 class CenterProvider with ChangeNotifier {
   List<Centers> centers = [];
   List<Centers> savedCenters = [];
+  
   final api = API_URL;
   final headers = HEADERS;
   final day = DateTime.now().day;

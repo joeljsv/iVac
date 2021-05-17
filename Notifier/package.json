@@ -1,0 +1,25 @@
+{
+  "name": "ivac",
+  "version": "1.0.0",
+  "description": "Vaccine Notifier",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase": "^8.5.0",
+    "firebase-admin": "^9.7.0",
+    "firebase-functions": "^3.11.0",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1",
+    "save": "^2.4.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joel Sunny Varghese",
+  "license": "ISC"
+}
