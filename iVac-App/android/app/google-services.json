@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1063373749646",
+    "firebase_url": "https://vaine-notifier-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "vaine-notifier",
+    "storage_bucket": "vaine-notifier.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063373749646:android:e5fea17f2c6ea613b7f8df",
+        "android_client_info": {
+          "package_name": "co.genover.vacine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1063373749646-hv49hr723qql8asdtsp6qhp61hvsdajf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC27104n_kD5hbDGLXPW3oQ9IzmWsJuSCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1063373749646-hv49hr723qql8asdtsp6qhp61hvsdajf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
