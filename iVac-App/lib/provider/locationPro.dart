@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vacinefinder/models/districts.dart';
-import 'package:vacinefinder/models/states.dart';
+import 'package:vacinefinder/models/vaccine/districts.dart';
+import 'package:vacinefinder/models/vaccine/states.dart';
 import 'package:vacinefinder/utils/service.dart';
 
 class LocationProv with ChangeNotifier {

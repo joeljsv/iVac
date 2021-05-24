@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -10,10 +9,11 @@ class CenterLoading extends StatelessWidget {
     return Container(
       height: 80,
       width: 80,
-      child: Lottie.asset("assets/images/load.json",fit: BoxFit.fill),
+      child: Lottie.asset("assets/images/load.json", fit: BoxFit.fill),
     );
   }
 }
+
 class Empty extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,11 +22,15 @@ class Empty extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          Text("No Centers Found",style: kTitleTextstyle,),
+          Text(
+            "No Centers Found",
+            style: kTitleTextstyle,
+          ),
           Container(
             // height: 175,
-            width: widt-20,
-            child: Lottie.asset("assets/images/empty.json",width: widt-20,height: height/4),
+            width: widt - 20,
+            child: Lottie.asset("assets/images/empty.json",
+                width: widt - 20, height: height / 4),
           ),
         ],
       ),
@@ -34,45 +38,37 @@ class Empty extends StatelessWidget {
   }
 }
 
-
-
- loading(BuildContext context){
+loading(BuildContext context, {@required String title}) {
   return showDialog(
-    barrierDismissible: false,
-    
-        context: context,
-      
-        builder: (_) => AlertDialog(
-    
-            title: Text('Saving'),
+      barrierDismissible: false,
+      context: context,
+      builder: (_) => AlertDialog(
+            title: Text('$title'),
             content: Text('Please wait...'),
-        )
-    );
- }
-  done(BuildContext context){
+          ));
+}
+
+popUpwithButton(BuildContext context,
+    {@required String title, @required body}) {
   return showDialog(
-    barrierDismissible: false,
-    
-        context: context,
-      
-        builder: (_) => AlertDialog(
-    title: const Text('Succefully saved this center'),
-    content: new Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text("You will get notification when its updated!"),
-      ],
-    ),
-    actions: <Widget>[
-      new TextButton(
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-      
-        child: const Text('OK'),
-      ),
-    ],
-  )
-    );
- }
+      barrierDismissible: false,
+      context: context,
+      builder: (_) => AlertDialog(
+            title: Text('$title'),
+            content: new Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text("$body"),
+              ],
+            ),
+            actions: <Widget>[
+              new TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          ));
+}

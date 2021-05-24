@@ -2,6 +2,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vacinefinder/provider/centers.dart';
+import 'package:vacinefinder/provider/user.dart';
 import 'myapp.dart';
 import 'provider/locationPro.dart';
 import 'utils/apptheme/constant.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => CenterProvider()),
         ChangeNotifierProvider(create: (context) => LocationProv()),
+         ChangeNotifierProvider(create: (context) => UserProvider ()),
       ],
       child: MaterialApp(
         title: 'iVac',

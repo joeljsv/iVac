@@ -10,7 +10,7 @@ const appgrrenColor = Color(0xFF36C12C);
 const appPrimaryColor = Color(0xFF3382CC);
 final shadowColor = Color(0xFFB7B7B7).withOpacity(.16);
 final shadowActive = Color(0xFF4056C6).withOpacity(.15);
-const Color introBackgroundColor = Color(0XFFefedf2);
+const Color introBackgroundColor = Color(0xFF4056C6);
 const Color mainColor = Color(0XFF8d12fe);
 
 // Text Style

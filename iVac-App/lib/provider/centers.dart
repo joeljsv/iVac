@@ -6,7 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vacinefinder/models/centers.dart';
+import 'package:vacinefinder/models/vaccine/centers.dart';
 import 'package:vacinefinder/utils/service.dart';
 
 class CenterProvider with ChangeNotifier {
@@ -15,6 +15,7 @@ class CenterProvider with ChangeNotifier {
   
   final api = API_URL;
   final headers = HEADERS;
+  final notiFy= NOTIFY;
   final day = DateTime.now().day;
   final month = DateTime.now().month;
   final year = DateTime.now().year;
@@ -42,7 +43,7 @@ class CenterProvider with ChangeNotifier {
   fetchWithPin({pincode = 110001}) async {
     try {
       final date = "$day-$month-$year";
-      print(date);
+   
       final Uri url = Uri.parse(
         "$api/appointment/sessions/public/calendarByPin?pincode=$pincode&date=$date",
       );
@@ -148,7 +149,7 @@ class CenterProvider with ChangeNotifier {
       if (!centerIdList.contains(cId)) {
         await FirebaseMessaging.instance.subscribeToTopic(cId);
         final Uri url = Uri.parse(
-          "$NOTIFY/$pin/$cId.json",
+          "$notiFy/notify/$NOTIFY/$pin/$cId.json",
         );
         await http.put(url, body: json.encode({"notify": true}));
         centerIdList.add(cId);

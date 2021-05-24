@@ -1,7 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:vacinefinder/provider/user.dart';
+import 'package:vacinefinder/screens/homeMain.dart';
 import 'package:vacinefinder/utils/apptheme/constant.dart';
-import 'home.dart';
 
+import 'user/userRegistration.dart';
 class IntroPage extends StatefulWidget {
   @override
   _IntroPageState createState() => _IntroPageState();
@@ -83,6 +88,25 @@ class _IntroPageState extends State<IntroPage> {
   }
 
   Widget _buildFooter(BuildContext context) {
+    getStarted() async {
+      final bool isExist =
+          await Provider.of<UserProvider>(context, listen: false)
+              .userExistance();
+
+      if (!isExist) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (_) => UserRegistration(),
+          ),
+        );
+      } else
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (_) => MainHomeScreen(),
+          ),
+        );
+    }
+
     return Positioned(
       bottom: 50,
       child: Container(
@@ -109,13 +133,7 @@ class _IntroPageState extends State<IntroPage> {
             ),
             SizedBox(height: 25),
             GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (_) => HomeScreen(),
-                  ),
-                );
-              },
+              onTap: () => getStarted(),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
