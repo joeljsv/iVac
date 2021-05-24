@@ -21,14 +21,8 @@ console.log("Started");
   // setInterval(intervalFunc, 1014000);
 
 
-
-// module.exports = () => {
-//   intervalFunc();
-//   
-// };
-
 function intervalFunc() {
-  console.log("Cant stop me now!");
+ 
   ref.once("value").then((val) => {
     const data = val.val();
     // console.log(data);
