@@ -1,5 +1,5 @@
 const String API_URL="https://cdn-api.co-vin.in/api/v2";
-const String NOTIFY="https://vaine-notifier-default-rtdb.asia-southeast1.firebasedatabase.app";
+const String NOTIFY="<Firebase RTD URL>";
 
 const  Map<String, String> HEADERS = {
       'User-Agent':
