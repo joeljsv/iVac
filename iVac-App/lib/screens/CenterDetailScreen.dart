@@ -45,11 +45,13 @@ class CenterDetailScreen extends StatelessWidget {
         actions: [
           IconButton(
               icon: Icon(Icons.save),
-              onPressed: () async{
-              loading(context);
-              await  Provider.of<CenterProvider>(context, listen: false).saveCenters(centers);
-                    Navigator.of(context).pop();
-                    done(context);             })
+              onPressed: () async {
+                loading(context, title: 'd');
+                // await Provider.of<CenterProvider>(context, listen: false)
+                //     .saveCenters(centers);
+                // Navigator.of(context).pop();
+                // done(context);
+              })
         ],
         title: Text(
           centers.name,
