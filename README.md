@@ -4,10 +4,10 @@ This app can show the vaccine status of all available centers across India and  
 
 **Team Id:  *BFH/rec9nr5EDzC40zzKI/2021***
 
-**Team Members
-Joel Sunny Varghese
-Akshay A
-Aswaghosh**
+**Team Members**
+**Joel Sunny Varghese**
+**Akshay A**
+**Aswaghosh**
 
 ---
 
